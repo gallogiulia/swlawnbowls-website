@@ -755,7 +755,7 @@
           city: "Laguna Woods",
           status: "private",
           website: "https://www.lwlbc.org",
-          email: "",
+          email: "contact@lwlbc.org",
           lat: 33.6103, lng: -117.7256,
           summary: "Private community club known for hosting divisional and national tournaments.",
           details: "Laguna Woods is a private club in the Laguna Woods Village community, established in 1966. The club often hosts divisional and national tournaments, including major events. The greens are synthetic.",
@@ -977,8 +977,8 @@
 
         grid.innerHTML = filtered.map(club => {
           const website = club.website ? `<a class="swd-link-pill primary" href="${makeLink(club.website)}" target="_blank" rel="noopener">Visit Website</a>` : "";
-          const email = club.email ? `<a class="swd-link-pill" href="mailto:${club.email}">Email</a>` : "";
-          const phone = club.phone ? `<a class="swd-link-pill" href="tel:${club.phone.replace(/[^0-9]/g, "")}">Call</a>` : "";
+          const email = club.email ? `<a class="swd-link-pill" href="mailto:${club.email}" target="_blank" rel="noopener">Email</a>` : "";
+          const phone = club.phone ? `<a class="swd-link-pill" href="tel:${club.phone.replace(/[^0-9]/g, "")}" target="_blank" rel="noopener">Call</a>` : "";
           const statusLabel = club.status === "open" ? "Public / Open" : "Private Club";
 
           return `
