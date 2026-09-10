@@ -18,6 +18,15 @@
 <section class="swd-home-feature">
   <div class="swd-home-feature__wrap">
 
+    <!-- DIVISION TAGLINE — masthead for the panel.
+         The artwork is only 341px wide, so it is capped at its natural size
+         to stay crisp. If a larger file turns up, raise the max-width. -->
+    <div class="swd-tagline">
+      <img class="swd-tagline__mark" src="/photos/home/tagline-sport-for-life.png"
+           alt="Lawn Bowls — A Sport for Life!" width="341" height="160">
+      <p class="swd-tagline__line">26 Clubs · One Sport · One Community</p>
+    </div>
+
     <!-- DIVISION SHIRT STORE — CLOSES SEP 12. Ships hidden; the script at the
          bottom reveals it only while the store is open, so it removes itself
          rather than advertising a closed store. -->
@@ -1166,6 +1175,35 @@
 
 <style>
   /* NOVICE ELIGIBILITY — TOP-OF-PAGE NOTICE */
+  .swd-tagline {
+    text-align: center;
+    padding: 6px 20px 30px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid rgba(17,24,39,0.10);
+  }
+
+  .swd-tagline__mark {
+    display: block;
+    width: 100%;
+    max-width: 341px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .swd-tagline__line {
+    margin: 16px 0 0;
+    font-size: clamp(15px, 1.8vw, 20px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0a5b3a;
+  }
+
+  @media (max-width: 600px) {
+    .swd-tagline { padding-bottom: 22px; }
+    .swd-tagline__line { letter-spacing: 0.05em; }
+  }
+
   .swd-shop-alert {
     display: block;
     text-decoration: none;
