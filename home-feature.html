@@ -39,6 +39,9 @@
         your home club for pickup; choose your club at checkout and give your home address too.
       </p>
       <span class="swd-shop-alert__cta">Order your shirt →</span>
+      <img class="swd-shop-alert__poster" src="/photos/home/swd-shirt-2026.png"
+           alt="New Southwest Division shirt - front and back, $27, order by September 12"
+           loading="lazy">
     </a>
 
     <!-- NOVICE ELIGIBILITY — TOP-OF-PAGE NOTICE -->
@@ -758,6 +761,15 @@
     line-height: 1.5;
     color: rgba(255,255,255,0.65);
   }
+
+  .swd-news-image {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin: 14px 0 0;
+    border-radius: 10px;
+  }
   .swd-news-card[data-type="live"]       .swd-news-arrow { color: #fca5a5; }
   .swd-news-card[data-type="result"]     .swd-news-arrow { color: #f0b429; }
   .swd-news-card[data-type="tournament"] .swd-news-arrow { color: #86efac; }
@@ -1207,6 +1219,38 @@
   .swd-shop-alert:hover .swd-shop-alert__cta {
     background: #ffffff;
     color: #0f2440;
+  }
+
+  .swd-shop-alert__poster {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 26px auto 0;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+  }
+
+  /* Side by side when there is room; poster below the copy on narrow screens. */
+  @media (min-width: 901px) {
+    .swd-shop-alert {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "kicker  poster"
+        "title   poster"
+        "text    poster"
+        "fine    poster"
+        "cta     poster";
+      column-gap: 34px;
+      align-items: start;
+    }
+    .swd-shop-alert__kicker { grid-area: kicker; }
+    .swd-shop-alert__title  { grid-area: title; }
+    .swd-shop-alert__text   { grid-area: text; }
+    .swd-shop-alert__fine   { grid-area: fine; }
+    .swd-shop-alert__cta    { grid-area: cta; justify-self: start; }
+    .swd-shop-alert__poster { grid-area: poster; margin: 0; max-width: 300px; }
   }
 
   @media (max-width: 900px) {
@@ -1857,6 +1901,7 @@
       </div>
       <p class="swd-news-title">${item.title}</p>
       ${item.body ? `<p class="swd-news-body">${item.body}</p>` : ""}
+      ${item.image ? `<img class="swd-news-image" src="${item.image}" alt="" loading="lazy">` : ""}
       ${item.link ? `<span class="swd-news-arrow">View →</span>` : ""}
     </${tag}>`;
   }
