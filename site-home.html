@@ -149,6 +149,20 @@
     color: rgba(255,255,255,.94); text-shadow: 0 1px 10px rgba(0,0,0,.4);
   }
   .hero .cta { margin-top: 26px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* Division shirt store promo */
+  .band.shop { background: var(--navy-deep); color: #fff; }
+  .shop-inner { max-width: 760px; text-align: center; }
+  .shop-kicker {
+    text-transform: uppercase; letter-spacing: .14em; font-size: .78rem;
+    font-weight: 700; color: var(--gold); margin: 0 0 10px;
+  }
+  .band.shop h2 { color: #fff; margin: 0 0 14px; font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+  .shop-dek { color: rgba(255,255,255,.82); margin: 0 0 12px; line-height: 1.6; }
+  .shop-deadline { margin: 18px 0 0; color: #fff; }
+  .shop-deadline strong { color: var(--gold); }
+  .band.shop .cta { margin-top: 20px; display: flex; justify-content: center; }
+  .band.shop .btn { background: var(--gold); color: var(--navy-deep); font-weight: 700; }
   .btn {
     display: inline-block; padding: 12px 22px; border-radius: 8px;
     font-weight: 600; font-size: .95rem; text-decoration: none;
@@ -252,6 +266,34 @@
     </div>
   </div>
 </div>
+
+<!-- Division shirt store. Hidden automatically once the store closes -
+     see the closesAt check below, so nobody has to remember to remove it. -->
+<section class="band shop" id="shop-promo" aria-label="Division shirt store" hidden>
+  <div class="shell shop-inner">
+    <div class="shop-copy">
+      <p class="shop-kicker">Online shop closing soon</p>
+      <h2>Order your Southwest Division shirt</h2>
+      <p class="shop-dek">
+        The new division shirt carries our official Southwest Bowls branding and
+        colors — the blue swirl for the rolling bowl and the California sky, the
+        yellow sun, and our classic palm trees. Made for everyday wear, by social
+        and tournament bowlers alike. $27.00 each, made to order.
+      </p>
+      <p class="shop-dek">
+        Fit varies between brands, so please don't assume your usual size.
+        Lay out a shirt you already like and follow the measuring instructions
+        in the store. Shirts ship free to your home club for pickup — choose
+        your club at checkout, and give your home address too.
+      </p>
+      <p class="shop-deadline">Orders close <strong>Saturday, September 12 at 10:00 AM PDT</strong></p>
+      <div class="cta">
+        <a class="btn" href="https://aa.alleghenyapparel.com/southwest_lawn_bowls_store/shop/home"
+           target="_blank" rel="noopener">Order your shirt</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="band" aria-label="Division news">
   <div class="shell">
@@ -513,6 +555,18 @@
     }, 500);
   });
   window.addEventListener('resize', fitFrame);
+
+  /* ── Division shirt store: show the promo only while the store is open ──
+     The band ships hidden and is revealed here, so if this script ever fails
+     the page simply has no promo rather than an expired one advertising a
+     closed store. Client clock is fine for a marketing banner - the worst
+     case is someone with a badly wrong date sees it a day early or late. */
+  (function () {
+    var promo = document.getElementById('shop-promo');
+    if (!promo) return;
+    var closesAt = new Date('2026-09-12T10:00:00-07:00');
+    if (Date.now() < closesAt.getTime()) promo.hidden = false;
+  })();
 
   window.addEventListener('message', function (ev) {
     if (!ev.data || typeof ev.data !== 'object') return;
