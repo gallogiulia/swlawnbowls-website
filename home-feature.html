@@ -18,6 +18,29 @@
 <section class="swd-home-feature">
   <div class="swd-home-feature__wrap">
 
+    <!-- DIVISION SHIRT STORE — CLOSES SEP 12. Ships hidden; the script at the
+         bottom reveals it only while the store is open, so it removes itself
+         rather than advertising a closed store. -->
+    <a class="swd-shop-alert" id="swd-shop-alert" hidden
+       href="https://aa.alleghenyapparel.com/southwest_lawn_bowls_store/shop/home"
+       target="_blank" rel="noopener">
+      <p class="swd-shop-alert__kicker">Online Shop Closing Soon</p>
+      <h2 class="swd-shop-alert__title">Order your Southwest Division shirt</h2>
+      <p class="swd-shop-alert__text">
+        Sales close <strong>Saturday, September 12 at 10:00 AM PDT</strong>. The new shirt
+        carries our official Southwest Bowls branding and colors — the blue swirl for the
+        rolling bowl and the California sky, the yellow sun, and our classic palm trees.
+        Made for everyday wear by social and tournament bowlers alike. <strong>$27.00 each</strong>,
+        made to order.
+      </p>
+      <p class="swd-shop-alert__text swd-shop-alert__fine">
+        Fit varies between brands — please don't assume your usual size. Lay out a shirt you
+        already like and follow the measuring instructions in the store. Shirts ship free to
+        your home club for pickup; choose your club at checkout and give your home address too.
+      </p>
+      <span class="swd-shop-alert__cta">Order your shirt →</span>
+    </a>
+
     <!-- NOVICE ELIGIBILITY — TOP-OF-PAGE NOTICE -->
     <a class="swd-novice-alert" href="https://www.swlawnbowls.org/2026-tournaments-events/swd-womens-vetnovice-triples26" target="_top">
       <p class="swd-novice-alert__kicker">Women's Vet/Novice Triples · Sunday, November 15</p>
@@ -1131,6 +1154,65 @@
 
 <style>
   /* NOVICE ELIGIBILITY — TOP-OF-PAGE NOTICE */
+  .swd-shop-alert {
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #0f2440 0%, #1a365d 100%);
+    border-radius: 26px;
+    padding: 34px 38px 32px;
+    margin-bottom: 26px;
+    box-shadow: 0 14px 30px rgba(15,36,64,0.24);
+  }
+
+  .swd-shop-alert__kicker {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #d4af37;
+  }
+
+  .swd-shop-alert__title {
+    margin: 0 0 14px;
+    font-size: clamp(28px, 4.2vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  .swd-shop-alert__text {
+    margin: 0 0 12px;
+    font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.90);
+    max-width: 760px;
+  }
+
+  .swd-shop-alert__text strong { color: #d4af37; }
+  .swd-shop-alert__fine { font-size: 15px; color: rgba(255,255,255,0.76); }
+  .swd-shop-alert__fine strong { color: rgba(255,255,255,0.9); }
+
+  .swd-shop-alert__cta {
+    display: inline-block;
+    margin-top: 18px;
+    background: #d4af37;
+    color: #0f2440;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 13px 24px;
+    border-radius: 999px;
+  }
+
+  .swd-shop-alert:hover .swd-shop-alert__cta {
+    background: #ffffff;
+    color: #0f2440;
+  }
+
+  @media (max-width: 900px) {
+    .swd-shop-alert { padding: 26px 22px 24px; }
+  }
+
   .swd-novice-alert {
     display: block;
     text-decoration: none;
@@ -1835,7 +1917,19 @@
     [400, 1200, 3000].forEach(ms => setTimeout(reportHeight, ms));
   }
 
+  // The shirt store closes Saturday Sep 12 at 10:00 AM PDT. The banner ships
+  // hidden and is revealed only while the store is open, so it disappears on
+  // its own instead of pointing members at a closed store. Failing to run
+  // leaves the page with no banner, which is the safe way round.
+  function revealShopAlert() {
+    const el = document.getElementById("swd-shop-alert");
+    if (!el) return;
+    const closesAt = new Date("2026-09-12T10:00:00-07:00");
+    if (Date.now() < closesAt.getTime()) el.hidden = false;
+  }
+
   function initAll() {
+    revealShopAlert();
     renderUpcomingStreams();
     loadNews();
     watchHeight();
