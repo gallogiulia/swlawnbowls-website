@@ -100,7 +100,7 @@
     <label>GitHub Personal Access Token</label>
     <input type="password" id="tokenInput" placeholder="github_pat_..." autocomplete="off">
     <label>Repo owner</label><input type="text" id="ownerInput" value="gallogiulia">
-    <label>Repo name</label><input type="text" id="repoInput" value="swd-google-calendar">
+    <label>Repo name</label><input type="text" id="repoInput" value="swlawnbowls-website">
     <label>Branch</label><input type="text" id="branchInput" value="main">
     <label>Data file path</label><input type="text" id="pathInput" value="events-data.json">
     <label>PDFs folder</label><input type="text" id="pdfsInput" value="pdfs">
@@ -146,7 +146,7 @@
   const $ = (id) => document.getElementById(id);
 
   const state = {
-    token: '', owner: 'gallogiulia', repo: 'swd-google-calendar',
+    token: '', owner: 'gallogiulia', repo: 'swlawnbowls-website',
     branch: 'main', path: 'events-data.json', pdfsDir: 'pdfs',
     data: null, sha: null, dirty: false,
     // path -> { blob, name, eventRef, kind }
@@ -319,7 +319,10 @@
   function renderEvent(e, idx) {
     const wrap = document.createElement('div');
     wrap.className = 'evp-event';
-    const vercelPreview = `https://${state.owner === 'gallogiulia' ? 'swd-google-calendar.vercel.app' : '[your-vercel].app'}/event?id=${encodeURIComponent(e.id || '')}`;
+    // The deployment hostname does not depend on who owns the GitHub repo, so
+    // this must not be keyed to the owner - it stayed correct when the repo
+    // moved to a division-owned organisation.
+    const vercelPreview = `https://swd-google-calendar.vercel.app/event?id=${encodeURIComponent(e.id || '')}`;
 
     wrap.innerHTML = `
       <div class="evp-event-head">

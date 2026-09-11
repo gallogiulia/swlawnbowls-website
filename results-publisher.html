@@ -105,13 +105,13 @@
 
   <div id="setup" class="pub-setup">
     <h3 style="margin-bottom:8px;">One-time setup</h3>
-    <p>Paste your GitHub Personal Access Token below. It stays in this browser only. Create one at <a href="https://github.com/settings/personal-access-tokens">github.com/settings/personal-access-tokens</a> (fine-grained, scoped to <code>swd-google-calendar</code>, with Contents: Read and write).</p>
+    <p>Paste your GitHub Personal Access Token below. It stays in this browser only. Create one at <a href="https://github.com/settings/personal-access-tokens">github.com/settings/personal-access-tokens</a> (fine-grained, scoped to <code>swlawnbowls-website</code>, with Contents: Read and write).</p>
     <label>GitHub Personal Access Token</label>
     <input type="password" id="tokenInput" placeholder="github_pat_... or ghp_..." autocomplete="off">
     <label>Repo owner</label>
     <input type="text" id="ownerInput" value="gallogiulia">
     <label>Repo name</label>
-    <input type="text" id="repoInput" value="swd-google-calendar">
+    <input type="text" id="repoInput" value="swlawnbowls-website">
     <label>Branch</label>
     <input type="text" id="branchInput" value="main">
     <label>Data file path</label>
@@ -162,7 +162,7 @@
   const state = {
     token: '',
     owner: 'gallogiulia',
-    repo: 'swd-google-calendar',
+    repo: 'swlawnbowls-website',
     branch: 'main',
     path: 'results-data.json',
     photosDir: 'photos',
