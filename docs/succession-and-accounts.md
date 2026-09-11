@@ -14,9 +14,14 @@ Started 2026-09-10.
 - [x] GitHub account `southwestbowls` created — **but it is a User account.**
       Create an Organisation from it and add the current webmaster as a second
       owner, so access is per-person rather than a shared password.
-- [x] Vercel account created — needs to become a **Team** (Pro) for the same
-      reason; Hobby accounts are single-login by design, and their 12-function
-      limit has already failed a deploy on this project once.
+- [x] Vercel team `SWBOWLS` created — `vercel.com/swbowls`,
+      team ID `team_H15YXYFPZgHdqLRdPBThL4P1`, login `webmaster-4192`.
+      **Still on Hobby**, which is single-member by design: there is no way to
+      invite anyone until it is upgraded to Pro, so it does not yet solve the
+      shared-login problem. Hobby also carries the 12-function limit that has
+      already failed a deploy on this project once.
+- [ ] Upgrade SWBOWLS to Pro, then invite `gallogiulia` as an Owner
+- [ ] Turn off Data Preferences → "Improve models with my data" on the team
 - [ ] Repo transferred to the GitHub organisation
 - [ ] `GITHUB_REPO_OWNER` set in Vercel, publishing token reissued from the org
 - [ ] Vercel project moved to the division team — **after the shirt campaign
