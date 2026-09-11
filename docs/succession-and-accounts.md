@@ -6,6 +6,28 @@ or simply loses access — a document cannot recover any of it.
 
 This file is the inventory and the order of work. Update it as each item moves.
 
+## Progress
+
+Started 2026-09-10.
+
+- [x] Division Google organisation — `southwestbowls`
+- [x] GitHub account `southwestbowls` created — **but it is a User account.**
+      Create an Organisation from it and add the current webmaster as a second
+      owner, so access is per-person rather than a shared password.
+- [x] Vercel account created — needs to become a **Team** (Pro) for the same
+      reason; Hobby accounts are single-login by design, and their 12-function
+      limit has already failed a deploy on this project once.
+- [ ] Repo transferred to the GitHub organisation
+- [ ] `GITHUB_REPO_OWNER` set in Vercel, publishing token reissued from the org
+- [ ] Vercel project moved to the division team — **after the shirt campaign
+      closes 2026-09-12**, never renaming the project
+- [ ] Sheets and Forms moved into the division Google org
+- [ ] Domain registrar for swlawnbowls.org confirmed division-owned
+
+Register the GitHub organisation and the Vercel team against a division
+address in the Google org (e.g. webmaster@swlawnbowls.org), not a personal
+mailbox — recovery mail, billing and 2FA resets all follow that address.
+
 ## Where things live today
 
 | What | Lives in | Owned by | Division-owned? |
