@@ -11,14 +11,14 @@
           "label": null,
           "columns": 2,
           "places": [
-            { "rank": 1, "names": "Corey Vose / Avery Burton" },
-            { "rank": 2, "names": "Dean Warmington / Angel Rocha" },
-            { "rank": 3, "names": "Michael Siddall / Bill Brault" },
-            { "rank": 4, "names": "Tom Richeson / Phil Dunn" },
-            { "rank": 5, "names": "Robert Busciglio / Kevin Toy" },
-            { "rank": 6, "names": "Scott Roberts / Linda Roberts" },
-            { "rank": 7, "names": "Abe Pinnella / Manya Urane" },
-            { "rank": 8, "names": "Jesse May / Chris Trenschel" }
+            { "rank": 1, "names": "Corey Vose / Avery Burton" , "photo": "/photos/all-comers-open-pairs-2026/1th-vose-burton.jpg" },
+            { "rank": 2, "names": "Dean Warmington / Angel Rocha" , "photo": "/photos/all-comers-open-pairs-2026/2th-warmington-rocha.jpg" },
+            { "rank": 3, "names": "Michael Siddall / Bill Brault" , "photo": "/photos/all-comers-open-pairs-2026/3th-siddall-brault.jpg" },
+            { "rank": 4, "names": "Tom Richeson / Phil Dunn" , "photo": "/photos/all-comers-open-pairs-2026/4th-richeson-dunn.jpg" },
+            { "rank": 5, "names": "Robert Busciglio / Kevin Toy" , "photo": "/photos/all-comers-open-pairs-2026/5th-busciglio-toy.jpg" },
+            { "rank": 6, "names": "Scott Roberts / Linda Roberts" , "photo": "/photos/all-comers-open-pairs-2026/6th-roberts-roberts.jpg" },
+            { "rank": 7, "names": "Abe Pinnella / Manya Urane" , "photo": "/photos/all-comers-open-pairs-2026/7th-pinnella-urane.jpg" },
+            { "rank": 8, "names": "Jesse May / Chris Trenschel" , "photo": "/photos/all-comers-open-pairs-2026/8th-may-trenschel.jpg" }
           ]
         }
       ]
