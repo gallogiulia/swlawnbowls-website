@@ -35,6 +35,34 @@ Register the GitHub organisation and the Vercel team against a division
 address in the Google org (e.g. webmaster@swlawnbowls.org), not a personal
 mailbox — recovery mail, billing and 2FA resets all follow that address.
 
+## Two Vercel projects serve this one repository
+
+Found 2026-09-10, while repairing deploys after the GitHub transfer. This is
+the single most surprising thing about the setup and the easiest way to break
+the site without noticing.
+
+| Vercel project | Serves | Notes |
+|---|---|---|
+| `swd-google-calendar` | `swd-google-calendar-pi.vercel.app` | not the public hostname |
+| `swd-tournament-hub.vercel.app` | **`swd-google-calendar.vercel.app`** and `hub.swlawnbowls.org` | this is what members hit |
+
+Both deploy from this same repository. The public hostname that is hardcoded
+in 186 places is served by the project named `swd-tournament-hub.vercel.app`,
+**not** by the project named `swd-google-calendar`, and `vercel link` in this
+working copy points at the latter.
+
+Consequences to remember:
+
+- `npx vercel ls` in this repo reports the *wrong* project. A deployment can
+  read "Ready" there while the live site has not moved at all.
+- Any change to the Git connection, environment variables or plan limits has
+  to be made on **both** projects.
+- Verify a deploy by fetching a changed file from `swd-google-calendar.vercel.app`,
+  never by trusting the CLI's deployment list.
+
+Consolidating onto one project would remove this trap, but it touches the
+hardcoded hostname and must not be attempted casually.
+
 ## Where things live today
 
 | What | Lives in | Owned by | Division-owned? |
