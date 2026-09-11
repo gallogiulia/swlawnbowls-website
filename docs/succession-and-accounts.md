@@ -21,7 +21,9 @@ Started 2026-09-10.
 - [ ] `GITHUB_REPO_OWNER` set in Vercel, publishing token reissued from the org
 - [ ] Vercel project moved to the division team — **after the shirt campaign
       closes 2026-09-12**, never renaming the project
-- [ ] Sheets and Forms moved into the division Google org
+- [x] Sheets and Forms — **already division-owned.** Verified 2026-09-10: the
+      entry and scoring sheets and all four member forms are owned by
+      `sw.bowls@gmail.com`, not a personal account. Nothing to move.
 - [ ] Domain registrar for swlawnbowls.org confirmed division-owned
 
 Register the GitHub organisation and the Vercel team against a division
@@ -36,8 +38,8 @@ mailbox — recovery mail, billing and 2FA resets all follow that address.
 | Hosting & deploys | Vercel `giulia-gallos-projects` | personal | **No** |
 | Public hostname | `swd-google-calendar.vercel.app` | Vercel project above | **No** |
 | Domain `swlawnbowls.org` | registrar / Squarespace | to confirm | **To confirm** |
-| Entry & scoring sheets | Google Sheets | to confirm | **To confirm** |
-| The four member forms | Google Forms | to confirm | **To confirm** |
+| Entry & scoring sheets | Google Sheets | `sw.bowls@gmail.com` | Yes |
+| The four member forms | Google Forms | `sw.bowls@gmail.com` | Yes |
 | Publisher login accounts | Vercel env var `USERS` | project above | follows Vercel |
 | GitHub token the publisher commits with | Vercel env var `GITHUB_PAT` | personal token | **No** |
 | Division PayPal | PayPal | division | assumed yes |
@@ -67,9 +69,11 @@ the publisher or the live site.
    project name must survive the move. Confirm the hostname still resolves
    before considering it done, and never rename the project.
 
-5. **Move the Google Sheets and Forms** into the division account. File IDs
-   survive a change of owner, so published `pubhtml` links keep working — but
-   check a published sheet afterwards rather than assuming.
+5. **Google — done, with one caveat.** The sheets and forms already sit in
+   `sw.bowls@gmail.com`. That is a shared Gmail rather than Workspace on our
+   own domain, so access is still a shared password rather than named people.
+   It is not urgent, but Workspace on swlawnbowls.org would make Google match
+   the model we are moving GitHub and Vercel to.
 
 6. **Confirm the domain registrar** for swlawnbowls.org is division-owned, and
    that at least two people can reach it.
