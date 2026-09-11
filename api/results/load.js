@@ -4,8 +4,12 @@
 
 const { requireAuth } = require('../_auth.js');
 
-const REPO_OWNER = 'gallogiulia';
-const REPO_NAME = 'swd-google-calendar';
+// Which GitHub repository this publishes to. Configurable so that moving the
+// repo to a division-owned account is an environment-variable change rather
+// than a code change - see docs/succession-and-accounts.md. The fallbacks are
+// the current location, so nothing changes until the variables are set.
+const REPO_OWNER = process.env.GITHUB_REPO_OWNER || 'gallogiulia';
+const REPO_NAME  = process.env.GITHUB_REPO_NAME  || 'swlawnbowls-website';
 
 module.exports = async (req, res) => {
   res.setHeader('Content-Type', 'application/json');
