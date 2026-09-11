@@ -11,9 +11,9 @@ This file is the inventory and the order of work. Update it as each item moves.
 Started 2026-09-10.
 
 - [x] Division Google organisation — `southwestbowls`
-- [x] GitHub account `southwestbowls` created — **but it is a User account.**
-      Create an Organisation from it and add the current webmaster as a second
-      owner, so access is per-person rather than a shared password.
+- [x] GitHub organisation **`Southwest-Bowls`** created 2026-09-11, with
+      `gallogiulia` added as a member. (The earlier `southwestbowls` User
+      account is not the org and is not used for the repo.)
 - [x] Vercel team `SWBOWLS` created — `vercel.com/swbowls`,
       team ID `team_H15YXYFPZgHdqLRdPBThL4P1`, login `webmaster-4192`.
       **Still on Hobby**, which is single-member by design: there is no way to
