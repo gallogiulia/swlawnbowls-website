@@ -63,6 +63,13 @@ Consequences to remember:
 Consolidating onto one project would remove this trap, but it touches the
 hardcoded hostname and must not be attempted casually.
 
+**Do not delete the project called `swd-tournament-hub.vercel.app`.** The name
+is vestigial - it dates from when the root served the tournament hub - but the
+project is the live public website. A separate Vercel project called `swd-hub`
+holds the abandoned operations-platform prototype and is the one that is safe
+to remove. The similar names are a trap: deleting the wrong one takes the site
+down and releases the hardcoded hostname.
+
 ## Where things live today
 
 | What | Lives in | Owned by | Division-owned? |
